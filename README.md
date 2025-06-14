@@ -1,11 +1,11 @@
 # 🧪 PetStore API Test Otomasyonu
 
-Bu proje, [Swagger PetStore](https://petstore.swagger.io/) API'si üzerinde hem **fonksiyonel API testleri** hem de **yük testleri** gerçekleştirmek amacıyla oluşturulmuştur.
+Bu proje, [Swagger PetStore](https://petstore.swagger.io/)  üzerinde API otomasyon testleri ve yük testleri gerçekleştirilmiştir..
 
 ## 🚀 Kullanılan Araçlar
 
 - ✅ **Cypress** – API Test Otomasyonu
-- ✅ **Postman** – Manuel test koleksiyonu
+- ✅ **Postman** – Test koleksiyonu
 - ✅ **Locust** – Yük Testi (Load Test)
 - ✅ **Mochawesome** – Cypress raporlama aracı
 
@@ -65,7 +65,9 @@ Cypress çalıştırıldığında HTML raporu otomatik oluşur:
 - Rapor yolu: `mochawesome-report/mochawesome.html`
 
 📸 Cypress Web Arayüzü:
+
 ![Ekran Alıntısı1](https://github.com/user-attachments/assets/7eab3746-37bc-4085-87eb-29f585a6ab5d)
+
 ![Ekran Alıntısı2](https://github.com/user-attachments/assets/ae6537c5-c35a-49de-bbb7-bf9d140a3119)
 
 ---
@@ -106,22 +108,3 @@ pip install locust
 ```
 
 ---
-
-## 📌 Ek Komutlar
-
-- Cypress testlerini çalıştır:
-```bash
-npx cypress run
-```
-
-- Locust GUI ile test başlat:
-```bash
-locust
-```
-
-- HTML raporu tarayıcıda aç:
-  - `mochawesome-report/mochawesome.html`
-
----
-
-Bu proje, API'lerin hem işlevsel doğruluğunu hem de yük altındaki performansını analiz etmek için kapsamlı bir test otomasyon çalışmasıdır.
