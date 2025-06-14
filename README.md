@@ -101,3 +101,63 @@ npm install
 
 **Senanur Tekinay**  
 GitHub: [@sntekinay](https://github.com/sntekinay)
+
+## 🔧 Kurulum
+
+Aşağıdaki adımlarla projeyi kendi bilgisayarınızda çalıştırabilirsiniz.
+
+---
+
+### ✅ Node.js Gereksinimleri (Cypress ve Raporlama için)
+
+1. `Node.js` yüklü değilse [https://nodejs.org](https://nodejs.org) üzerinden kurun.
+2. Proje dizinine terminal ile gidin ve aşağıdaki komutları çalıştırın:
+
+```bash
+npm install --save-dev cypress
+npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
+```
+
+> Eğer Allure kullanacaksanız:
+```bash
+npm install --save-dev @shelex/cypress-allure-plugin
+npm install -g allure-commandline --save-dev
+```
+
+---
+
+### 🐍 Python Gereksinimleri (Locust için)
+
+1. Python kurulu değilse [https://python.org](https://python.org) adresinden kurun.
+2. Terminal veya komut istemine şu komutu yazın:
+
+```bash
+pip install locust
+```
+
+---
+
+### 📦 Postman
+
+- Postman ile manuel test yapmak için sadece [Postman Desktop App](https://www.postman.com/downloads/) yüklenmelidir.
+- Ardından `postman/PetStore.postman_collection.json` dosyasını içe aktarabilirsiniz.
+
+---
+
+### 📌 Notlar
+
+- Cypress testleri için çalıştırma komutu:
+
+```bash
+npx cypress run
+```
+
+- Locust yük testi için GUI modda çalıştırma:
+
+```bash
+locust
+```
+
+- Cypress HTML raporu:
+  - `mochawesome-report/mochawesome.html` dosyasını tarayıcıda açabilirsiniz.
+- Locust GUI ekran görüntüsü veya `locust_report.html` dosyası `locust/` klasöründedir.
