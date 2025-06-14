@@ -1,62 +1,103 @@
+# 🧪 PetStore API Test Otomasyonu
 
-# 🧪 PetStore API Test Automation Project
+Bu proje, [Swagger PetStore](https://petstore.swagger.io/) API'si üzerinde hem **fonksiyonel API testleri** hem de **yük testleri** gerçekleştirmek amacıyla oluşturulmuştur.  
+Projede kullanılan araçlar:  
+- ✅ Cypress (API Test Otomasyonu için)  
+- ✅ Postman (Manuel test ve koleksiyon)  
+- ✅ Locust (Yük Testi için)  
+- ✅ Mochawesome (Cypress raporlama)
+
 ---
 
-## ✅ Project Structure
+## 📁 Proje Yapısı
 
 ```
 PetStoreAutomation/
-├── cypress/
+├── cypress/                
 │   └── e2e/
 │       └── user_api_test.cy.js
-├── cypress.config.js
-├── package.json
-└── .gitignore
+├── postman/                
+│   └── PetStore.postman_collection.json
+├── locust/                 
+│   └── locustfile.py
+├── mochawesome-report/     # ✅ Cypress test raporu (HTML)
+│   └── mochawesome.html
+├── screenshots/            # Locust GUI ekran görüntüsü
+│   └── locust_gui_result.png
+├── README.md               
+└── package.json            
 ```
 
 ---
 
-## 🧪 Test Scenarios
+## ✅ Cypress API Testleri
 
-This project automates 6 main user flows of the Petstore API:
+`cypress/e2e/user_api_test.cy.js` dosyasında aşağıdaki endpointler test edilmiştir:
 
-| Method | Endpoint                                | Description                    |
-|--------|------------------------------------------|--------------------------------|
-| POST   | `/user`                                  | Create a new user             |
-| GET    | `/user/login`                            | Login with username/password  |
-| GET    | `/user/{username}`                       | Fetch user info               |
-| PUT    | `/user/{username}`                       | Update user info              |
-| GET    | `/user/logout`                           | Log out                       |
-| DELETE | `/user/{username}`                       | Delete the user               |
+- `POST /user` – Yeni kullanıcı oluşturma  
+- `GET /user/login` – Giriş  
+- `GET /user/{username}` – Kullanıcı bilgisi  
+- `PUT /user/{username}` – Bilgi güncelleme  
+- `GET /user/logout` – Çıkış  
+- `DELETE /user/{username}` – Silme  
 
----
+### 🧪 Çalıştırmak için:
 
-## 🚀 How to Run the Tests
-
-### 1. Install dependencies
-```bash
-npm install
-```
-### 2. Run tests with Cypress GUI
-```bash
-npx cypress open
-```
-### 3. Or run headlessly (CLI)
 ```bash
 npx cypress run
 ```
+
 ---
 
-## ✅ Sample Result Screenshots
+## 📊 Cypress Raporu – Mochawesome
 
-Test execution in Cypress:
-![Ekran Alıntısı1](https://github.com/user-attachments/assets/933b668d-cab6-4d05-bea1-cf57fb530e70)
+Cypress testleri sonrası detaylı bir HTML raporu otomatik olarak oluşur:
 
-Detailed test body and assertions:
-![Ekran Alıntısı2](https://github.com/user-attachments/assets/2608b772-5ef2-4bd4-a79c-b20bafc13c12)
+📄 **mochawesome.html:**  
+`mochawesome-report/mochawesome.html`
 
+> Bu rapor tarayıcıda açıldığında her testin sonucu, hatalar, süre ve detayları görsel olarak sunar.
 
-## 📦 Notes
-
-- `node_modules/`, `screenshots/`, `videos/` are excluded via `.gitignore`.
 ---
+
+## 📤 Postman
+
+`postman/PetStore.postman_collection.json` dosyasıyla API'ler manuel olarak da test edilebilir.
+
+---
+
+## 📈 Locust Yük Testi
+
+`locust/locustfile.py` dosyası üzerinden PetStore kullanıcı işlemleri yük altında test edilmiştir.
+
+### GUI Modda Çalıştırmak için:
+
+```bash
+locust
+```
+
+Açılan tarayıcıdan:  
+👉 http://localhost:8089
+
+### 📸 Ekran Görüntüsü:
+
+- `screenshots/locust_gui_result.png` içinde GUI rapor ekranının görüntüsü yer almaktadır.
+
+---
+
+## 📌 Ek Bilgiler
+
+- Tüm testlerde kullanılan kullanıcı adı: `senanur_tekinay`
+- `node_modules/` klasörü `.gitignore` ile dahil edilmemiştir.
+- Projeyi çalıştırmak için önce bağımlılıkları yükleyin:
+
+```bash
+npm install
+```
+
+---
+
+## 👤 Geliştirici
+
+**Senanur Tekinay**  
+GitHub: [@sntekinay](https://github.com/sntekinay)
