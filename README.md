@@ -1,11 +1,13 @@
 # 🧪 PetStore API Test Otomasyonu
 
-Bu proje, [Swagger PetStore](https://petstore.swagger.io/) API'si üzerinde hem **fonksiyonel API testleri** hem de **yük testleri** gerçekleştirmek amacıyla oluşturulmuştur.  
-Projede kullanılan araçlar:  
-- ✅ Cypress (API Test Otomasyonu için)  
-- ✅ Postman (Manuel test ve koleksiyon)  
-- ✅ Locust (Yük Testi için)  
-- ✅ Mochawesome (Cypress raporlama)
+Bu proje, [Swagger PetStore](https://petstore.swagger.io/) API'si üzerinde hem **fonksiyonel API testleri** hem de **yük testleri** gerçekleştirmek amacıyla oluşturulmuştur.
+
+## 🚀 Kullanılan Araçlar
+
+- ✅ **Cypress** – API Test Otomasyonu
+- ✅ **Postman** – Manuel test koleksiyonu
+- ✅ **Locust** – Yük Testi (Load Test)
+- ✅ **Mochawesome** – Cypress raporlama aracı
 
 ---
 
@@ -19,29 +21,36 @@ PetStoreAutomation/
 ├── postman/                
 │   └── PetStore.postman_collection.json
 ├── locust/                 
-│   └── locustfile.py
-├── mochawesome-report/     # ✅ Cypress test raporu (HTML)
-│   └── mochawesome.html
-├── screenshots/            # Locust GUI ekran görüntüsü
+│   ├── locustfile.py
 │   └── locust_gui_result.png
-├── README.md               
-└── package.json            
+├── mochawesome-report/
+│   └── mochawesome.html
+├── README.md
+└── package.json
 ```
+
+---
+
+## 📬 Postman Testleri
+
+- Postman [Desktop App](https://www.postman.com/downloads/) indirilmeli.
+- `postman/PetStore.postman_collection.json` dosyası içe aktarılmalıdır.
+- Bu koleksiyon, CRUD işlemleri içeren manuel testleri kapsar.
 
 ---
 
 ## ✅ Cypress API Testleri
 
-`cypress/e2e/user_api_test.cy.js` dosyasında aşağıdaki endpointler test edilmiştir:
+Aşağıdaki endpoint’ler `cypress/e2e/user_api_test.cy.js` dosyasında test edilmiştir:
 
 - `POST /user` – Yeni kullanıcı oluşturma  
 - `GET /user/login` – Giriş  
-- `GET /user/{username}` – Kullanıcı bilgisi  
+- `GET /user/{username}` – Kullanıcı bilgisi alma  
 - `PUT /user/{username}` – Bilgi güncelleme  
 - `GET /user/logout` – Çıkış  
 - `DELETE /user/{username}` – Silme  
 
-### 🧪 Çalıştırmak için:
+### 🔧 Cypress Çalıştırma
 
 ```bash
 npx cypress run
@@ -51,85 +60,46 @@ npx cypress run
 
 ## 📊 Cypress Raporu – Mochawesome
 
-Cypress testleri sonrası detaylı bir HTML raporu otomatik olarak oluşur:
+Cypress çalıştırıldığında HTML raporu otomatik oluşur:
 
-📄 **mochawesome.html:**  
-`mochawesome-report/mochawesome.html`
+- Rapor yolu: `mochawesome-report/mochawesome.html`
 
-> Bu rapor tarayıcıda açıldığında her testin sonucu, hatalar, süre ve detayları görsel olarak sunar.
-
----
-
-## 📤 Postman
-
-`postman/PetStore.postman_collection.json` dosyasıyla API'ler manuel olarak da test edilebilir.
+📸 Cypress Web Arayüzü:
+![Ekran Alıntısı1](https://github.com/user-attachments/assets/7eab3746-37bc-4085-87eb-29f585a6ab5d)
+![Ekran Alıntısı2](https://github.com/user-attachments/assets/ae6537c5-c35a-49de-bbb7-bf9d140a3119)
 
 ---
 
 ## 📈 Locust Yük Testi
 
-`locust/locustfile.py` dosyası üzerinden PetStore kullanıcı işlemleri yük altında test edilmiştir.
+`locust/locustfile.py` dosyası kullanılarak API’lerin eş zamanlı kullanıcı yükü altında nasıl davrandığı test edilmiştir.
 
-### GUI Modda Çalıştırmak için:
-
-```bash
-locust
-```
-
-Açılan tarayıcıdan:  
-👉 http://localhost:8089
-
-### 📸 Ekran Görüntüsü:
-
-- `screenshots/locust_gui_result.png` içinde GUI rapor ekranının görüntüsü yer almaktadır.
-
----
-
-## 📌 Ek Bilgiler
-
-- Tüm testlerde kullanılan kullanıcı adı: `senanur_tekinay`
-- `node_modules/` klasörü `.gitignore` ile dahil edilmemiştir.
-- Projeyi çalıştırmak için önce bağımlılıkları yükleyin:
+### 🔧 Locust GUI Modda Çalıştırma
 
 ```bash
-npm install
+locust -f locustfile.py
 ```
 
----
+Tarayıcıdan:
+```
+http://localhost:8089
+```
 
-## 👤 Geliştirici
-
-**Senanur Tekinay**  
-GitHub: [@sntekinay](https://github.com/sntekinay)
-
-## 🔧 Kurulum
-
-Aşağıdaki adımlarla projeyi kendi bilgisayarınızda çalıştırabilirsiniz.
+📸 Ekran Görüntüsü:
+![locustreport](https://github.com/user-attachments/assets/16ce6b6a-68fb-4831-a2e0-ab19f15a8e8d)
 
 ---
 
-### ✅ Node.js Gereksinimleri (Cypress ve Raporlama için)
+## ⚙️ Kurulum
 
-1. `Node.js` yüklü değilse [https://nodejs.org](https://nodejs.org) üzerinden kurun.
-2. Proje dizinine terminal ile gidin ve aşağıdaki komutları çalıştırın:
+### Node.js Gereksinimleri (Cypress ve Raporlama için)
 
 ```bash
 npm install --save-dev cypress
 npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator
 ```
 
-> Eğer Allure kullanacaksanız:
-```bash
-npm install --save-dev @shelex/cypress-allure-plugin
-npm install -g allure-commandline --save-dev
-```
-
----
-
-### 🐍 Python Gereksinimleri (Locust için)
-
-1. Python kurulu değilse [https://python.org](https://python.org) adresinden kurun.
-2. Terminal veya komut istemine şu komutu yazın:
+### Python Gereksinimleri (Locust için)
 
 ```bash
 pip install locust
@@ -137,27 +107,21 @@ pip install locust
 
 ---
 
-### 📦 Postman
+## 📌 Ek Komutlar
 
-- Postman ile manuel test yapmak için sadece [Postman Desktop App](https://www.postman.com/downloads/) yüklenmelidir.
-- Ardından `postman/PetStore.postman_collection.json` dosyasını içe aktarabilirsiniz.
-
----
-
-### 📌 Notlar
-
-- Cypress testleri için çalıştırma komutu:
-
+- Cypress testlerini çalıştır:
 ```bash
 npx cypress run
 ```
 
-- Locust yük testi için GUI modda çalıştırma:
-
+- Locust GUI ile test başlat:
 ```bash
 locust
 ```
 
-- Cypress HTML raporu:
-  - `mochawesome-report/mochawesome.html` dosyasını tarayıcıda açabilirsiniz.
-- Locust GUI ekran görüntüsü veya `locust_report.html` dosyası `locust/` klasöründedir.
+- HTML raporu tarayıcıda aç:
+  - `mochawesome-report/mochawesome.html`
+
+---
+
+Bu proje, API'lerin hem işlevsel doğruluğunu hem de yük altındaki performansını analiz etmek için kapsamlı bir test otomasyon çalışmasıdır.
