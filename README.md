@@ -1,11 +1,5 @@
 
 # 🧪 PetStore API Test Automation Project
-
-This project contains end-to-end API tests for the [Swagger Petstore](https://petstore.swagger.io/) API using [Cypress](https://www.cypress.io/).  
-All scenarios were implemented based on the **User endpoints**.
-
-> 💡 Author: Senanur Tekinay
-
 ---
 
 ## ✅ Project Structure
@@ -40,40 +34,29 @@ This project automates 6 main user flows of the Petstore API:
 ## 🚀 How to Run the Tests
 
 ### 1. Install dependencies
-
 ```bash
 npm install
 ```
-
 ### 2. Run tests with Cypress GUI
-
 ```bash
 npx cypress open
 ```
-
 ### 3. Or run headlessly (CLI)
-
 ```bash
 npx cypress run
 ```
-
 ---
 
 ## ✅ Sample Result Screenshots
 
 Test execution in Cypress:
-
-![Test Summary](Ekran%20Al%C4%B1nt%C4%B1s%C4%B11.PNG)
+![Ekran Alıntısı1](https://github.com/user-attachments/assets/933b668d-cab6-4d05-bea1-cf57fb530e70)
 
 Detailed test body and assertions:
+![Ekran Alıntısı2](https://github.com/user-attachments/assets/2608b772-5ef2-4bd4-a79c-b20bafc13c12)
 
-![Test Body](Ekran%20Al%C4%B1nt%C4%B1s%C4%B12.PNG)
-
----
 
 ## 📦 Notes
 
 - `node_modules/`, `screenshots/`, `videos/` are excluded via `.gitignore`.
-- This project is ready for extension with Allure or Mochawesome reporting.
-
 ---
